@@ -16,7 +16,6 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 /**
- *
  * Created by necer on 2017/6/28.
  */
 
@@ -32,7 +31,7 @@ public abstract class RxObserver<T> implements Observer<T> {
     private Context mContext;
 
 
-    public RxObserver(Context context,String key, int whichRequest,boolean isShowDialog) {
+    public RxObserver(Context context, String key, int whichRequest, boolean isShowDialog) {
         this.mContext = context;
         this.mKey = key;
         this.isShowDialog = isShowDialog;
@@ -80,18 +79,12 @@ public abstract class RxObserver<T> implements Observer<T> {
         }
     }
 
+    public abstract void onSuccess(int whichRequest, T t);
 
-    public abstract void onSuccess(int whichRequest ,T t);
     public abstract void onError(int whichRequest, Throwable e);
 
     public void onStart(int whichRequest) {
 
     }
-
-
-
-
-
-
 
 }

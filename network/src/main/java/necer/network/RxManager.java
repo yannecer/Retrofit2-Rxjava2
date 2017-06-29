@@ -36,11 +36,6 @@ public class RxManager {
             compositeDisposable.add(disposable);
             map.put(key,compositeDisposable );
         }
-
-
-
-
-
     }
 
     public void clear(String key) {

@@ -1,5 +1,4 @@
 package necer.network;
-
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
 
@@ -21,8 +20,6 @@ public class RxFunction<T> implements Function<HttpResult<T>, T> {
               //  case 2111:
               //      throw ........
             }
-
-
         }
         return httpResult.getResult();
     }

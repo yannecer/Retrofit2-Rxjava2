@@ -30,6 +30,7 @@ public class MainActivity extends BaseActivity {
                     public void onSuccess(int whichRequest, String s) {
                         tv_.setText(s);
                     }
+
                     @Override
                     public void onError(int whichRequest, Throwable e) {
 

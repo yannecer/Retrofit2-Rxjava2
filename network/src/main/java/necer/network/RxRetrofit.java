@@ -17,11 +17,11 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RxRetrofit {
 
-    public static final int READ_TIME_OUT = 10;
-    public static final int CONNECT_TIME_OUT = 10;
+    private static final int READ_TIME_OUT = 10;
+    private static final int CONNECT_TIME_OUT = 10;
     private static Retrofit retrofit;
 
-    public static Retrofit getRetrofit() {
+    public static Retrofit getRetrofit(String baseUrl) {
         //开启Log
         HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
@@ -47,7 +47,7 @@ public class RxRetrofit {
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl(ApiConstant.BASE_URL)
+                .baseUrl(baseUrl)
                 .build();
 
         return retrofit;

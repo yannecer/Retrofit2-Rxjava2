@@ -14,6 +14,8 @@ public class MVPActivity extends BaseActivity implements MVPView{
 
     TextView tv_;
     private MVPPresenter mvpPresenter;
+
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_mvp;
@@ -28,6 +30,7 @@ public class MVPActivity extends BaseActivity implements MVPView{
     public void request(View view) {
         mvpPresenter.getCalendar(this, "2018-10-01", TAG, 0, false);
     }
+
 
     @Override
     public void setResult(Calendar calendar) {
