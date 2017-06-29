@@ -1,4 +1,4 @@
-package necer.network.bean;
+package com.necer.example.bean;
 
 /**
  * Created by necer on 2017/6/29.

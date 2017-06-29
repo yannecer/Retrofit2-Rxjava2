@@ -1,7 +1,9 @@
-package necer.network;
+package com.necer.example.api;
+
+import com.necer.example.bean.Calendar;
 
 import io.reactivex.Observable;
-import necer.network.bean.Calendar;
+import necer.network.HttpResult;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 

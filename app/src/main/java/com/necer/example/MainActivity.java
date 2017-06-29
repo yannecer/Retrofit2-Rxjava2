@@ -4,11 +4,12 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
-import necer.network.Api;
+import com.necer.example.api.Api;
+import com.necer.example.bean.Calendar;
+
 import necer.network.RxFunction;
 import necer.network.RxObserver;
 import necer.network.RxSchedulers;
-import necer.network.bean.Calendar;
 
 public class MainActivity extends BaseActivity {
 
@@ -26,7 +27,7 @@ public class MainActivity extends BaseActivity {
                 .compose(RxSchedulers.<String>io_main())
                 .subscribeWith(new RxObserver<String>(this, TAG, 0, true) {
                     @Override
-                    public void onSuccee(int whichRequest, String s) {
+                    public void onSuccess(int whichRequest, String s) {
                         tv_.setText(s);
                     }
                     @Override
@@ -49,7 +50,7 @@ public class MainActivity extends BaseActivity {
                     }
 
                     @Override
-                    public void onSuccee(int whichRequest, Calendar calendar) {
+                    public void onSuccess(int whichRequest, Calendar calendar) {
                         tv_.setText(calendar.getLunar());
                     }
 

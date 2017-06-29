@@ -2,8 +2,9 @@ package com.necer.example;
 
 import android.content.Context;
 
+import com.necer.example.bean.Calendar;
+
 import necer.network.RxObserver;
-import necer.network.bean.Calendar;
 
 /**
  * Created by necer on 2017/6/29.
@@ -30,18 +31,16 @@ public class MVPPresenter {
             }
 
             @Override
-            public void onSuccee(int whichRequest, Calendar calendar) {
+            public void onSuccess(int whichRequest, Calendar calendar) {
                 mvpView.onEndLoading(whichRequest);
                 mvpView.setResult(calendar);
             }
 
             @Override
             public void onError(int whichRequest, Throwable e) {
-                mvpView.onErrot(whichRequest, e);
+                mvpView.onError(whichRequest, e);
                 mvpView.onEndLoading(whichRequest);
             }
         });
     }
-
-
 }

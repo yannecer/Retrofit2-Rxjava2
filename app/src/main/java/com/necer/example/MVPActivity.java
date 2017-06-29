@@ -3,7 +3,8 @@ package com.necer.example;
 import android.view.View;
 import android.widget.TextView;
 
-import necer.network.bean.Calendar;
+import com.necer.example.bean.Calendar;
+
 
 /**
  * Created by necer on 2017/6/29.
@@ -24,7 +25,6 @@ public class MVPActivity extends BaseActivity implements MVPView{
         mvpPresenter = new MVPPresenter(this);
     }
 
-
     public void request(View view) {
         mvpPresenter.getCalendar(this, "2018-10-01", TAG, 0, false);
     }
@@ -34,14 +34,13 @@ public class MVPActivity extends BaseActivity implements MVPView{
         tv_.setText(calendar.getWeekday());
     }
 
-
     /**
      * 如果有多个请求可根据whichRequest处理不同请求的异常
      * @param whichRequest
      * @param t
      */
     @Override
-    public void onErrot(int whichRequest, Throwable t) {
+    public void onError(int whichRequest, Throwable t) {
 
     }
 
