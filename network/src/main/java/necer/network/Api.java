@@ -12,19 +12,11 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-/**
- * des:retorfit api
- * Created by xsf
- * on 2016.06.15:47
- */
 public class Api {
-    //读超时长，单位：秒
     public static final int READ_TIME_OUT = 10;
-    //连接时长，单位：秒
     public static final int CONNECT_TIME_OUT = 10;
     public Retrofit retrofit;
     public ApiService movieService;
-
 
 
     private Api() {

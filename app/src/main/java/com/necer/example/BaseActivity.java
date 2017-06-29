@@ -20,9 +20,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutId());
         TAG = getPackageName() + "." + getClass().getSimpleName();
         MyLog.d("TAG::" + TAG);
+
+        initData();
     }
 
     protected abstract int getLayoutId();
+
+    protected abstract void initData();
 
     @Override
     protected void onDestroy() {

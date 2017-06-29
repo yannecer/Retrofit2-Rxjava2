@@ -17,4 +17,18 @@
         android:text="请求bean"
         android:onClick="bean"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MVP请求"
+        android:onClick="mvp"/>
+
+    <TextView
+        android:id="@+id/tv_"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="显示结果"/>
+
+
 </LinearLayout>

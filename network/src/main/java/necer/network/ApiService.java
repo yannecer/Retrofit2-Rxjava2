@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    //菜谱
+    //日历
     @GET("day?key=1863a50c31d7c")
     Observable<String> calendarJson(@Query("date") String date);
 
