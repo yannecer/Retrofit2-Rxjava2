@@ -4,14 +4,12 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.widget.Toast;
-
 import java.io.EOFException;
 import java.net.BindException;
 import java.net.ConnectException;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 

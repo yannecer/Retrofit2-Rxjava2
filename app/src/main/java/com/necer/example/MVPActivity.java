@@ -15,7 +15,6 @@ public class MVPActivity extends BaseActivity implements MVPView{
     TextView tv_;
     private MVPPresenter mvpPresenter;
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.activity_mvp;

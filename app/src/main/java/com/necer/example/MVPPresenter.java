@@ -20,10 +20,9 @@ public class MVPPresenter {
         mvpModel = new MVPModel();
     }
 
-
     public void getCalendar(Context context,String date, String key,int whichRequest ,boolean isShowDialog) {
-        mvpModel.getCalendar(date).subscribe(new RxObserver<Calendar>(context,key,whichRequest,isShowDialog) {
 
+        mvpModel.getCalendar(date).subscribe(new RxObserver<Calendar>(context,key,whichRequest,isShowDialog) {
             @Override
             public void onStart(int whichRequest) {
                 super.onStart(whichRequest);

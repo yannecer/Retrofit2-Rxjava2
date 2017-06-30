@@ -8,6 +8,7 @@ import com.necer.example.bean.Calendar;
  */
 
 public interface MVPView {
+
     void setResult(Calendar calendar);
 
     void onError(int whichRequest ,Throwable t);

@@ -7,6 +7,8 @@ import android.widget.TextView;
 import com.necer.example.api.Api;
 import com.necer.example.bean.Calendar;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import necer.network.RxFunction;
 import necer.network.RxObserver;
 import necer.network.RxSchedulers;
@@ -24,7 +26,9 @@ public class MainActivity extends BaseActivity {
     public void json(View view) {
         Api.getDefaultService()
                 .calendarJson("2017-06-29")
-                .compose(RxSchedulers.<String>io_main())
+               // .compose(RxSchedulers.<String>io_main())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new RxObserver<String>(this, TAG, 0, true) {
                     @Override
                     public void onSuccess(int whichRequest, String s) {
@@ -45,11 +49,6 @@ public class MainActivity extends BaseActivity {
                 .map(new RxFunction<Calendar>())
                 .compose(RxSchedulers.<Calendar>io_main())
                 .subscribeWith(new RxObserver<Calendar>(this, TAG, 0, false) {
-                    @Override
-                    public void onStart(int whichRequest) {
-                        super.onStart(whichRequest);
-                    }
-
                     @Override
                     public void onSuccess(int whichRequest, Calendar calendar) {
                         tv_.setText(calendar.getLunar());

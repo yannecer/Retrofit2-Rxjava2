@@ -15,12 +15,15 @@ public class RxManager {
 
 
     private static RxManager rxManager;
-    private static Map<String,CompositeDisposable> map;
+    private Map<String, CompositeDisposable> map;
+
+    private RxManager() {
+        map = new HashMap<>();
+    }
 
     public static RxManager getInstance() {
         if (rxManager == null) {
             rxManager = new RxManager();
-            map = new HashMap<>();
         }
         return rxManager;
     }
@@ -34,7 +37,7 @@ public class RxManager {
         } else {
             CompositeDisposable compositeDisposable = new CompositeDisposable();
             compositeDisposable.add(disposable);
-            map.put(key,compositeDisposable );
+            map.put(key, compositeDisposable);
         }
     }
 
