@@ -16,7 +16,7 @@
                 .calendarBean("2017-06-29")
                 .map(new RxFunction<Calendar>())
                 .compose(RxSchedulers.<Calendar>io_main())
-                .subscribeWith(new RxObserver<Calendar>(this, TAG, 0, false) {
+                .subscribe(new RxObserver<Calendar>(this, TAG, 0, false) {
                     @Override
                     public void onSuccess(int whichRequest, Calendar calendar) {
                         tv_.setText(calendar.getLunar());
